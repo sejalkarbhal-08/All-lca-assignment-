@@ -1,0 +1,102 @@
+#include <stdio.h>
+
+int main()
+{
+    int r, c, i, j;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &r);
+
+    printf("Enter number of columns: ");
+    scanf("%d", &c);
+
+    char subject[r][c][30];
+    int a[r][c], b[r][c], sum[r][c];
+
+    /* Enter subject names */
+    printf("\nEnter subject names:\n");
+
+    for(i = 0; i < r; i++)
+    {
+        for(j = 0; j < c; j++)
+        {
+            printf("Subject [%d][%d]: ", i, j);
+            scanf("%s", subject[i][j]);
+        }
+    }
+
+    /* Enter Mid-Sem marks */
+    printf("\nEnter Mid-Sem marks:\n");
+
+    for(i = 0; i < r; i++)
+    {
+        for(j = 0; j < c; j++)
+        {
+            printf("Enter marks for %s: ", subject[i][j]);
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    /* Enter End-Sem marks */
+    printf("\nEnter End-Sem marks:\n");
+
+    for(i = 0; i < r; i++)
+    {
+        for(j = 0; j < c; j++)
+        {
+            printf("Enter marks for %s: ", subject[i][j]);
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    /* Display subjects */
+    printf("\nSubjects Matrix:\n");
+
+    for(i = 0; i < r; i++)
+    {
+        for(j = 0; j < c; j++)
+        {
+            printf("%s\t", subject[i][j]);
+        }
+        printf("\n");
+    }
+
+    /* Display Mid-Sem Matrix */
+    printf("\nMid-Sem Marks Matrix:\n");
+
+    for(i = 0; i < r; i++)
+    {
+        for(j = 0; j < c; j++)
+        {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    /* Display End-Sem Matrix */
+    printf("\nEnd-Sem Marks Matrix:\n");
+
+    for(i = 0; i < r; i++)
+    {
+        for(j = 0; j < c; j++)
+        {
+            printf("%d\t", b[i][j]);
+        }
+        printf("\n");
+    }
+
+    /* Matrix Addition */
+    printf("\nAddition of Two Matrices:\n");
+
+    for(i = 0; i < r; i++)
+    {
+        for(j = 0; j < c; j++)
+        {
+            sum[i][j] = a[i][j] + b[i][j];
+            printf("%d\t", sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
